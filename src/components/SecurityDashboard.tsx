@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CredentialModal } from "./CredentialModal";
+import { ThemeToggle } from "./ThemeToggle";
 import { useToast } from "@/hooks/use-toast";
 
 export type AppStatus = "encrypted" | "decrypted" | "processing";
@@ -153,10 +154,13 @@ export const SecurityDashboard = () => {
               <p className="text-muted-foreground">Application Encryption & Security Management</p>
             </div>
           </div>
-          <Button variant="outline" size="sm">
-            <Settings className="w-4 h-4 mr-2" />
-            Settings
-          </Button>
+          <div className="flex items-center space-x-2">
+            <ThemeToggle />
+            <Button variant="outline" size="sm">
+              <Settings className="w-4 h-4 mr-2" />
+              Settings
+            </Button>
+          </div>
         </div>
 
         {/* Status Overview */}
